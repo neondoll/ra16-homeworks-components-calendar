@@ -1,0 +1,5 @@
+body { margin: 0; }
+
+* { box-sizing: border-box; }
+
+#root { width: 325px; margin: 50px auto; }
