@@ -16,11 +16,11 @@ function Calendar({ date }: { date: Date }) {
   const firstDay = startOfMonth(date);
 
   const allDaysOfMonth = eachDayOfInterval({
-    start: addDays(firstDay, 1 - format(firstDay, 'i')),
-    end: addDays(lastDay, 7 - format(lastDay, 'i')),
+    start: addDays(firstDay, 1 - Number(format(firstDay, 'i'))),
+    end: addDays(lastDay, 7 - Number(format(lastDay, 'i'))),
   });
 
-  const formatDate = (formatStr) => format(date, formatStr, { locale: ru });
+  const formatDate = (formatStr: string) => format(date, formatStr, { locale: ru });
   const isOtherMonth = (day: Date) => {
     return format(day, 'M') !== format(date, 'M');
   };
